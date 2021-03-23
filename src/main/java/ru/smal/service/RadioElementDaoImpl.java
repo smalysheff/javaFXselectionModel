@@ -24,22 +24,27 @@ public class RadioElementDaoImpl implements Dao<RadioElement, Integer> {
     }
 
     @Override
-    public RadioElement findById() {
+    public RadioElement findById(RadioElement radioElement) {
         return null;
     }
 
     @Override
-    public void add() {
+    public void add(RadioElement radioElement) {
 
     }
 
     @Override
-    public void update() {
+    public void update(RadioElement radioElement) {
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            session.update(radioElement);
+            session.getTransaction().commit();
+        }
 
     }
 
     @Override
-    public void delete() {
+    public void delete(RadioElement radioElement) {
 
     }
 }

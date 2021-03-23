@@ -6,7 +6,6 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -43,8 +42,6 @@ public class MainController {
     @FXML
     private TableColumn<RadioElement, String> descriptionCol;
 
-
-
     @FXML
     public void initialize(){
         initData();
@@ -61,7 +58,7 @@ public class MainController {
         tableView.getSelectionModel().selectedItemProperty().addListener(
                 (obj, oldValue, newValue) -> {
                     selectedItem = newValue;
-                    System.out.println(newValue);
+//                    System.out.println(newValue);
         });
 
     }
@@ -76,12 +73,12 @@ public class MainController {
         stage.show();
 
         updateController.setData(selectedItem);
+
     }
 
     void initData(){
         Dao<RadioElement, Integer> radioElementDaoImpl = new RadioElementDaoImpl(factory);
         radioElements.addAll(radioElementDaoImpl.findByAll());
+        factory.close();
     }
-
-
 }

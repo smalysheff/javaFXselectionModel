@@ -27,6 +27,6 @@
             <Label fx:id="idLbl" text="Label" GridPane.columnIndex="1" />
          </children>
       </GridPane>
-      <Button layoutX="341.0" layoutY="215.0" mnemonicParsing="false" text="update" />
+      <Button fx:id="buttonUpdate" layoutX="341.0" layoutY="215.0" mnemonicParsing="false" onAction="#onActionUpdate" text="update" />
    </children>
 </AnchorPane>
