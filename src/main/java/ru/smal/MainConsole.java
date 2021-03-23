@@ -1,4 +1,4 @@
-package ru.smal.controller;
+package ru.smal;
 
 import java.util.Timer;
 import java.util.TimerTask;
