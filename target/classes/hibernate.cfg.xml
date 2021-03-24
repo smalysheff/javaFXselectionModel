@@ -9,6 +9,7 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">9874123</property>
         <property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
 
         <property name="show_sql">true</property>
         <property name="format_sql">true</property>

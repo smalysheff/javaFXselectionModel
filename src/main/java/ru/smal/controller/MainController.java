@@ -79,6 +79,17 @@ public class MainController {
     void initData(){
         Dao<RadioElement, Integer> radioElementDaoImpl = new RadioElementDaoImpl(factory);
         radioElements.addAll(radioElementDaoImpl.findByAll());
-        factory.close();
+    }
+
+    public void onActionDelete(ActionEvent event) {
+        RadioElement selectedItem = tableView
+                .getSelectionModel().getSelectedItem();
+
+        tableView.getItems().remove(selectedItem);
+
+        Dao<RadioElement, Integer> radioDaoImpl =
+                new RadioElementDaoImpl(factory);
+        radioDaoImpl.delete(selectedItem);
+
     }
 }

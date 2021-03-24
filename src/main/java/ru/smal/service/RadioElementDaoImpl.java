@@ -45,6 +45,11 @@ public class RadioElementDaoImpl implements Dao<RadioElement, Integer> {
 
     @Override
     public void delete(RadioElement radioElement) {
+        try(Session session = factory.openSession()){
+            session.beginTransaction();
+            session.delete(radioElement);
+            session.getTransaction().commit();
+        }
 
     }
 }

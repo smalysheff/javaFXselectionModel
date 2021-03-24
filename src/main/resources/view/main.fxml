@@ -13,7 +13,7 @@
             <TableColumn fx:id="descriptionCol" prefWidth="154.0" text="description" />
         </columns>
       </TableView>
-      <Button layoutX="526.0" layoutY="361.0" mnemonicParsing="false" text="delete" />
+      <Button layoutX="526.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionDelete" text="delete" />
       <Button layoutX="457.0" layoutY="361.0" mnemonicParsing="false" onAction="#onActionUpdate" text="update" />
       <Button layoutX="404.0" layoutY="361.0" mnemonicParsing="false" text="add" />
    </children>
